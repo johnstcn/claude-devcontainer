@@ -1,12 +1,18 @@
 {
+	"appPort": [33337],
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-
+	"containerEnv": {
+		"CLAUDE_CODE_USE_BEDROCK":    "1",
+		"ANTHROPIC_MODEL":            "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
+		"ANTHROPIC_SMALL_FAST_MODEL": "us.anthropic.claude-3-5-haiku-20241022-v1:0"
+	},
 	"features": {
 		"ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
 	},
-	"postCreateCommand": {
-		"claude-code": "/home/coder/postCreate.sh"
+	"postStartCommand": {
+		"claude-code": "/opt/scripts/claude-code.sh",
+		"code-server": "/opt/scripts/code-server.sh"
 	}
 }

@@ -15,7 +15,7 @@ if ! command -v screen; then
 fi
 
 if command -v coder 2>/dev/null; then
-	CODER_MCP_APP_STATUS_SLUG=claude-code coder exp mcp configure claude-code /workspace
+	CODER_MCP_APP_STATUS_SLUG=claude-code coder exp mcp configure claude-code /workspaces
 fi
 
 touch "${HOME}/.screenrc"
@@ -32,7 +32,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 screen -U -dmS claude-code bash -c '
-	cd /workspace
+	cd /workspaces
 	claude --dangerously-skip-permissions | tee -a "${HOME}/.claude-code.log"
 	exec bash
 '
