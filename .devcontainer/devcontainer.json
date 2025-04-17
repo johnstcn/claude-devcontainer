@@ -14,5 +14,6 @@
 	"postStartCommand": {
 		"claude-code": "/opt/scripts/claude-code.sh",
 		"code-server": "/opt/scripts/code-server.sh"
-	}
+	},
+	"runArgs": ["--network=host"]
 }
